@@ -2,8 +2,6 @@
 #include <fstream>
 #include <string>
 #include <cmath>
-#include <boost/array.hpp>
-#include "poly_grav.hpp"
 #include <math.h>
 
 using namespace std;
@@ -35,6 +33,7 @@ int main()
     string content;
     int cont =0;
 
+
     while(file >> content) {
 
       if ((cont%4)!=0 && cont <vert_n*4)
@@ -42,8 +41,12 @@ int main()
 
        if ( cont >vert_n*4 && (cont-1)%4 !=0)
     {f[(cont-1-4*vert_n)/4][(cont-2)%4]=std::stoi(content);}
-      cont++;
+
+    cont++;
+
     }
+
+
 
 // End of Part 0------------------OK---------------------//
 
@@ -139,6 +142,7 @@ cont =0;
      }
 
    }
+
 // End of Part 2 -------------------ok ------------------------------//
 
 float field[3]={600.0,0.0,0.0};
@@ -153,10 +157,10 @@ for(int i=0;i<vert_n;i++)
 
 //End of Part 3 ------------------------ok----------------------//
 
-float E_term,F_term=0;
+float E_term=0,F_term=0;
 int a,b,c;
 float wf;
-float prodF[3],prodE[3];
+float prodF[3];
 
 for (int i=0;i<face_n;i++)
 {
@@ -174,8 +178,12 @@ for(int k=0;k<3;k++)
 F_term=F_term+wf*(r_vec[a][0]*prodF[0]+r_vec[a][1]*prodF[1]+r_vec[a][2]*prodF[2]);
 
 }
+
+
 //End of Part 4 ------------------------ok----------------------//
+
 float Le;
+float prodE[3];
 for (int i=0;i <edge_n;i++)
 {edge_len=edges_len[i];
  a=edges[i][0]-1;b=edges[i][1]-1;
@@ -190,10 +198,15 @@ for(int k=0;k<3;k++)
 }
 E_term=E_term+Le*(r_vec[a][0]*prodE[0]+r_vec[a][1]*prodE[1]+r_vec[a][2]*prodE[2]);
 }
+
+
+
 //End of Part 5 ------------------------ok----------------------//
 
 float Pot=0.5*1900*(E_term-F_term);
 cout<<Pot;
+
+
     return 0;
 }
 
@@ -225,7 +238,7 @@ x=x+la*lb*lc;
 x=x+la*(b0*c0+b1*c1+b2*c2)+lb*(a0*c0+a1*c1+a2*c2)+lc*(b0*a0+b1*a1+b2*a2);
 
 wf = 2*atan2(y,x);
-
+return  wf;
 }
 float logterm(float a,float b,float c)
 {float Le= log((a+b+c)/(a+b-c));

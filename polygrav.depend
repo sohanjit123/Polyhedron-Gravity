@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1593082336 source:/home/sohanjit/Desktop/WFH/Polyhedron Gravity/polygrav/main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<cmath>
+	<boost/array.hpp>
+	"poly_grav.hpp"
+	<math.h>
+
+1592476016 /home/sohanjit/Desktop/WFH/Polyhedron Gravity/polygrav/poly_grav.hpp
+	"poly_grav.hpp"
+	<boost/array.hpp>
+	<cmath>
+	<eigen3/Eigen/Dense>
+	<eigen3/Eigen/Eigenvalues>
+	<iostream>
+	<string>
+	<vector>
+
+1593083847 source:c:\users\sohanjit iitk\onedrive\desktop\polygrav\polygrav\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<cmath>
+	<boost/array.hpp>
+	"poly_grav.hpp"
+	<math.h>
+
+1593083847 c:\users\sohanjit iitk\onedrive\desktop\polygrav\polygrav\poly_grav.hpp
+	"poly_grav.hpp"
+	<boost/array.hpp>
+	<cmath>
+	<eigen3/Eigen/Dense>
+	<eigen3/Eigen/Eigenvalues>
+	<iostream>
+	<string>
+	<vector>
+
